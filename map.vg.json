@@ -5,7 +5,7 @@
   "height": 600,
   "projection": {"type": "equirectangular"},
   "layer":[{"data": {
-    "url": "https://raw.githubusercontent.com/PurnaPerera/Map/main/js/ESP_adm2.json",
+    "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/ESP_adm2.json",
     "format": {"type": "topojson", "feature": "ESP_adm2-1"}
   },
   "transform": [
@@ -13,7 +13,7 @@
       "lookup": "properties.NAME_2",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/PurnaPerera/Map/main/data/study.csv"
+          "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/study.csv"
         },
         "key": "Region",
         "fields": ["Percentage"]
