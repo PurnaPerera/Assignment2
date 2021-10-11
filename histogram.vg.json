@@ -1,0 +1,36 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "width": 500,
+ "height": 400,
+ "title": "LexTALE Test Results",
+ "data": {
+     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/BEST.csv"
+ },
+ "transform": [
+    {"calculate": "datum.LEXTALEE > 70 ? 'Fluent' : 'Not Fluent'", "as": "English Fluency"}
+  ],
+"layer":[{
+ "mark": "bar",
+ "encoding": {
+ "x": {
+ "bin":{"step":3},
+ "field": "LEXTALEB",
+ "type": "quantitative",
+ "title":"Basque" 
+ },
+ "y": {
+ "aggregate":"count",
+ "stack":null
+ },
+ "color": {
+      "field": "English Fluency",
+      "scale": {"range": ["#675193", "#ca8861"]}
+    },
+    "opacity": {"value": 0.7},
+"order": {
+ "aggregate":"count",
+ "field":"English Fluency",
+ "sort": "descending"
+ }
+ }}]
+}
