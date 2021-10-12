@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Week 9 Homework: Percentage of test subjects from each region",
+  "title": "Percentage of test subjects from each region",
   "width": 800,
   "height": 600,
   "projection": {"type": "equirectangular"},
