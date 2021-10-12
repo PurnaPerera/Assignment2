@@ -32,5 +32,45 @@
  "field":"English Fluency",
  "sort": "descending"
  }
- }}]
+ }},{
+    "mark": "rule",
+    "encoding": {
+      "x": {"datum":91},
+      "color": {"value": "purple"},
+      "size": {"value": 3}
+    }
+  },{
+    "mark": "rule",
+    "encoding": {
+      "x": {"datum":88},
+      "color": {"value": "orange"},
+      "size": {"value": 3}
+    }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 425,
+          "y":5,
+          "lineBreak":"\n",
+          "fill":"purple",
+          "text": "Fluent Median"
+        }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 305,
+          "y":5,
+          "lineBreak":"\n",
+          "fill":"orange",
+          "text": "Not Fluent Median"
+        }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 120,
+          "y":10,
+          "lineBreak":"\n",
+          "fill":"#808080",
+          "text": "Looking at this graph, we see that \n people who are fluent in English are \n typically  better at Basque as well. \n This implies that perhaps being raised \n billingual helps with acquisition of \n languges in the future."
+        }}]
 }
