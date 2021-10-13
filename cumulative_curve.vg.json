@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/BEST.csv"},
+  "title": "Age of Acquisition for Different Performance Classes","width": 500,
+ "height": 400,
+ "params": [
+ {
+ "name": "lextale_test_result",
+ "bind": {
+ "input": "select",
+ "options": [
+ null,
+ "Above 70",
+ "Above 80",
+ "Above 90"],
+ "labels":[
+ "All Scores",
+ "Above 70",
+ "Above 80",
+ "Above 90"],
+ "name": "LexTALE Test Result: "}}],
+  "transform": [{"filter":{"or":["lextale_test_result == null", {"and":["datum.LEXTALEE>70","datum.LEXTALEB>70","datum.LEXTALES>70", "lextale_test_result == 'Above 70'"]},{"and":["datum.LEXTALEE>80","datum.LEXTALEB>80","datum.LEXTALES>80", "lextale_test_result == 'Above 80'"]},{"and":["datum.LEXTALEE>90","datum.LEXTALEB>90","datum.LEXTALES>90", "lextale_test_result == 'Above 90'"]}]}},{
+    "sort": [{"field": "AGEOFACQUISITIONSPANISH"}],
+    "window": [{"op": "count", "field": "count", "as": "Spanish"}]
+  }, {
+      "joinaggregate": [{"op": "count", "field": "Spanish", "as": "SpanishTotalCount"}]
+    }, {
+      "calculate": "datum.Spanish/datum.SpanishTotalCount", "as": "Cumulative Count Spanish"
+    },{
+    "sort": [{"field": "AGEOFACQUISITIONBASQUE"}],
+    "window": [{"op": "count", "field": "count", "as": "Basque"}]
+  },{
+      "joinaggregate": [{"op": "count", "field": "Basque", "as": "BasqueTotalCount"}]
+    }, {
+      "calculate": "datum.Basque/datum.BasqueTotalCount", "as": "Cumulative Count Basque"
+    },{
+    "sort": [{"field": "AGEOFACQUISITIONENGLISH"}],
+    "window": [{"op": "count", "field": "count", "as": "English"}]
+  },{
+      "joinaggregate": [{"op": "count", "field": "English", "as": "EnglishTotalCount"}]
+    }, {
+      "calculate": "datum.English/datum.EnglishTotalCount", "as": "Cumulative Count English"
+    }],
+  "layer":[{"mark": "line",
+  "encoding": {
+    "x": {
+      "field": "AGEOFACQUISITIONSPANISH",
+      "type": "quantitative",
+      "title":"Age of Acquisition"
+    },
+    "y": {
+      "field": "Cumulative Count Spanish",
+      "type": "quantitative",
+      "title": "Cumulative Percentage"
+    },
+    "color":{"value":"#F1BF00"}
+  }},{"mark": "line",
+  "encoding": {
+    "x": {
+      "field": "AGEOFACQUISITIONBASQUE",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Cumulative Count Basque",
+      "type": "quantitative"
+    },
+    "color":{"value":"#DC143C"}
+  }},{"mark": "line",
+  "encoding": {
+    "x": {
+      "field": "AGEOFACQUISITIONENGLISH",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Cumulative Count English",
+      "type": "quantitative",
+      "axis": {
+        "format": ".1~%"
+        }
+    },
+    "color":{"value":"navy"}
+  }}] 
+}
