@@ -3,7 +3,7 @@
   "title": "Percentage of test subjects from each region",
   "width": 800,
   "height": 600,
-  "projection": {"type": "equirectangular"},
+  "projection": {"type": "conicEqualArea"},
   "layer":[{"data": {
     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/ESP_adm2.json",
     "format": {"type": "topojson", "feature": "ESP_adm2-1"}
