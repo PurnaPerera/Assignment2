@@ -26,7 +26,6 @@
  }
  ],
  "transform": [
- {"filter": "datum.LEXTALES > 70"},
  {"filter":{"or":["Subject_background == null", {"and":["datum.AGEOFACQUISITIONSPANISH<3", "datum.AGEOFACQUISITIONBASQUE<3", "Subject_background == 'Native Bilinguals'"]},{"and":["datum.AGEOFACQUISITIONSPANISH>2 || datum.AGEOFACQUISITIONBASQUE>2", "Subject_background == 'Native Monolinguals'"]}]}}
  ], "layer":[{
  "mark": "circle",
@@ -34,7 +33,7 @@
  "x": {
  "field": "LEXTALES",
  "type": "quantitative",
- "scale": {"domain":[70,100]},
+ "scale": {"domain":[45,100]},
  "title":"Spanish" 
  },
  "y": {
