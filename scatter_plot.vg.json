@@ -46,7 +46,7 @@
  "color": {
  "field": "LEXTALEE",
  "type": "quantitative",
- "scale": {"type":"threshold", "domain":[70],"range":["#ADD8E6","#CD5C5C"]},
+ "scale": {"type":"threshold", "domain":[70],"range":["orange","purple"]},
  "title":"English"
  },
  "tooltip": [
