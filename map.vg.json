@@ -48,8 +48,9 @@
       "scale": {
         "type": "threshold",
         "domain": [0.05, 0.15, 0.45],
-        "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
- }
+        "range": ["#FFBEB2", "#FA8F79", "#F05C4d", "#D3293D"]
+              },
+      "legend":{"format": ".2~%"}
 
     },
     "tooltip": [{"field": "properties.NAME_0", "type": "nominal", "title": "Country"},
