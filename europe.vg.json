@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Basque Speaking Areas of Spain",
   "width": 800,
   "height": 400,
+  "background":"#D4F1F4",
   "projection": {"type": "conicEqualArea", "scale":1600, "center":[10,42]},
   "layer":[{"data": {
     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/Europe.json",
@@ -10,7 +10,17 @@
   },
   "mark": {"type": "geoshape"},
   "encoding": {
-    "color":{"value":"Grey"},
+    "color":{"value":"#AEAEAE"},
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Country"}
+    ]
+  }},{"data": {
+    "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/Europe.json",
+    "format": {"type": "topojson", "feature": "Europe"}
+  }, "transform":[{"filter":"datum.properties.NAME == 'Spain'"}],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color":{"value":"#F1BF00"},
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"}
     ]
