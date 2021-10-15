@@ -21,5 +21,10 @@
  "stack":null,
  "title":"Average LexTALE Score"
  },
- "color":{"value": "#DC143C"}}}]
+ "color":{"value": "#DC143C"},
+ "tooltip": [
+ {"field": "LEXTALEB", "aggregate":"mean", "title":"Average LexTALE Score", "format":".2f"},{
+ "field": "MAXIMUMEDUCATIONALLEVEL",
+ "type": "nominal",
+ "title":"Educational Level"}]}}]
 }
