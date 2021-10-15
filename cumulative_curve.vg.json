@@ -53,7 +53,17 @@
       "type": "quantitative",
       "title": "Cumulative Percentage"
     },
-    "color":{"value":"#F1BF00"}
+    "color":{"value":"#F1BF00"},
+    "tooltip":[{
+      "field": "AGEOFACQUISITIONSPANISH",
+      "type": "quantitative",
+      "title":"Age of Acquisition"
+    },{
+      "field": "Cumulative Count Spanish",
+      "type": "quantitative",
+      "title": "Cumulative Percentage",
+      "format": ".2~%"
+    }]
   }},{"mark": "line",
   "encoding": {
     "x": {
@@ -64,7 +74,17 @@
       "field": "Cumulative Count Basque",
       "type": "quantitative"
     },
-    "color":{"value":"#DC143C"}
+    "color":{"value":"#DC143C"},
+    "tooltip":[{
+      "field": "AGEOFACQUISITIONBASQUE",
+      "type": "quantitative",
+      "title":"Age of Acquisition"
+    },{
+      "field": "Cumulative Count Basque",
+      "type": "quantitative",
+      "title": "Cumulative Percentage",
+      "format": ".2~%"
+    }]
   }},{"mark": "line",
   "encoding": {
     "x": {
@@ -78,6 +98,16 @@
         "format": ".1~%"
         }
     },
-    "color":{"value":"navy"}
+    "color":{"value":"navy"},
+    "tooltip":[{
+      "field": "AGEOFACQUISITIONENGLISH",
+      "type": "quantitative",
+      "title":"Age of Acquisition"
+    },{
+      "field": "Cumulative Count English",
+      "type": "quantitative",
+      "title": "Cumulative Percentage",
+      "format": ".2~%"
+    }]
   }}] 
 }
