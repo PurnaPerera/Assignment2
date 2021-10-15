@@ -28,17 +28,7 @@
     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/ESP_adm2.json",
     "format": {"type": "topojson", "feature": "ESP_adm2-1"}
   },
-  "transform": [{"filter":{"field":"properties.NAME_2", "oneOf":["Vizcaya","Guipúzcoa","Álava","Navarra"]}},
-    {
-      "lookup": "properties.NAME_2",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/study.csv"
-        },
-        "key": "Region",
-        "fields": ["Percentage"]
-      }
-    }
+  "transform": [{"filter":{"field":"properties.NAME_2", "oneOf":["Vizcaya","Guipúzcoa","Álava","Navarra"]}}
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
