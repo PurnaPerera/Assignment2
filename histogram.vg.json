@@ -10,13 +10,13 @@
     {"calculate": "datum.LEXTALEE > 70 ? 'Fluent' : 'Not Fluent'", "as": "English Fluency"}
   ],
 "layer":[{
- "mark": "bar",
+ "mark": {"type":"bar","tooltip":true},
  "encoding": {
  "x": {
  "bin":{"step":3},
  "field": "LEXTALEB",
  "type": "quantitative",
- "title":"Basque" 
+ "title":"Basque Score" 
  },
  "y": {
  "aggregate":"count",
