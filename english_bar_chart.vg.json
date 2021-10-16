@@ -1,0 +1,31 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "width": 300,
+ "height": 400,
+ "title": {"text":"Educational Level and Linguistic Ability: English", "fontSize":14},
+ "data": {
+     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/BEST.csv"
+ },
+ "layer":[{
+ "mark": "bar",
+ "encoding": {
+ "x": {
+ "field": "MAXIMUMEDUCATIONALLEVEL",
+ "type": "nominal",
+ "title":"Educational Level",
+ "sort": ["Professional Training", "High School", "University", "Postgraduate"]
+ },
+ "y": {
+"field":"LEXTALEE",
+ "aggregate":"mean",
+ "stack":null,
+ "title":"Average LexTALE Score",
+ "scale":{"domain":[0,100]}
+ },
+ "color":{"value": "navy"},
+ "tooltip": [
+ {"field": "LEXTALEE", "aggregate":"mean", "title":"Average LexTALE Score", "format":".2f"},{
+ "field": "MAXIMUMEDUCATIONALLEVEL",
+ "type": "nominal",
+ "title":"Educational Level"}]}}]
+}

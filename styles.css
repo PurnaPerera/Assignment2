@@ -1,0 +1,66 @@
+{
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    h1{
+      font-family: 'Lobster', cursive;
+      font-weight: 900;
+      color: rgb(36, 59, 36);
+      font-size: 55px;
+      text-align: center;
+    }
+
+    h2 {
+      color: rgb(36, 59, 36);
+    }
+
+     body{
+       background-color: white;
+     }
+     .page{
+       width: 850px;    
+       background-color: #f7edf0;   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h2, h1{
+      margin-top:0px;
+    }
+    .description-right {
+      padding-left: 20px;
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    .small-font{
+        color: gray;
+        font-size: 12px;
+    }
+    .basque {
+      color:#DC143C;
+      font-weight: bold;
+    }
+    .spanish {
+      color:#F1BF00;
+      font-weight: bold;
+    }
+    .english {
+      color: navy;
+      font-weight: bold;
+    }
+
+    .fluent {
+      color: purple;
+      font-weight: bold;
+    }
+
+    .not_fluent {
+      color: orange;
+      font-weight: bold;
+    }

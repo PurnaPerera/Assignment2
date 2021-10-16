@@ -1,0 +1,67 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "width": 460,
+ "height": 400,
+ "title":{"text":"LexTALE Test Results", "fontSize":21},
+ "data": {
+     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/BEST.csv"
+ },
+ "params": [
+ {
+ "name": "Subject_background",
+ "bind": {
+ "input": "select",
+ "options": [
+ null,
+ "Native Bilinguals",
+ "Native Monolinguals"
+ ],
+ "labels":[
+ "Show All",
+ "Native Bilinguals",
+ "Native Monolinguals"
+ ],
+ "name": "Subject Background: "
+ }
+ }
+ ],
+ "transform": [
+ {"filter":{"or":["Subject_background == null", {"and":["datum.AGEOFACQUISITIONSPANISH<3", "datum.AGEOFACQUISITIONBASQUE<3", "Subject_background == 'Native Bilinguals'"]},{"and":["datum.AGEOFACQUISITIONSPANISH>2 || datum.AGEOFACQUISITIONBASQUE>2", "Subject_background == 'Native Monolinguals'"]}]}}
+ ], "layer":[{
+ "mark": "circle",
+ "encoding": {
+ "x": {
+ "field": "LEXTALES",
+ "type": "quantitative",
+ "scale": {"domain":[45,100]},
+ "title":"Spanish" 
+ },
+ "y": {
+ "field": "LEXTALEB",
+ "type": "quantitative",
+ "scale": {"domain":[45,100]},
+ "title":"Basque"
+ },
+ "color": {
+ "field": "LEXTALEE",
+ "type": "quantitative",
+ "scale": {"type":"threshold", "domain":[70],"range":["orange","purple"]},
+ "title":"English"
+ },
+ "tooltip": [
+ {"field": "LEXTALES", "type": "quantitative", "title":"Spanish"},
+ {"field": "LEXTALEB", "type": "quantitative", "title":"Basque"},
+ {"field": "LEXTALEE", "type": "quantitative", "title":"English"}]
+ }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 120,
+          "y":300,
+          "lineBreak":"\n",
+          "fill":"#808080",
+          "font":"sans-serif",
+          "fontWeight": 100,
+          "text": "Subjects are classified as native \n bilinguals if they acquired both Spanish and \n Basque before the age of 3. Otherwise they're \n classifed as native monolinguals."
+        }}]
+}

@@ -1,0 +1,78 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "width": 460,
+ "height": 400,
+ "title": {"text":"LexTALE Test Results: Basque", "fontSize":21},
+ "data": {
+     "url": "https://raw.githubusercontent.com/PurnaPerera/Assignment2/main/BEST.csv"
+ },
+ "transform": [
+    {"calculate": "datum.LEXTALEE > 70 ? 'Fluent' : 'Not Fluent'", "as": "English Fluency"}
+  ],
+"layer":[{
+ "mark": {"type":"bar","tooltip":true},
+ "encoding": {
+ "x": {
+ "bin":{"step":3},
+ "field": "LEXTALEB",
+ "type": "quantitative",
+ "title":"Basque Score" 
+ },
+ "y": {
+ "aggregate":"count",
+ "stack":null
+ },
+ "color": {
+      "field": "English Fluency",
+      "scale": {"range": ["#675193", "#ca8861"]}
+    },
+    "opacity": {"value": 0.7},
+"order": {
+ "aggregate":"count",
+ "field":"English Fluency",
+ "sort": "descending"
+ }
+ }},{
+    "mark": "rule",
+    "encoding": {
+      "x": {"datum":91},
+      "color": {"value": "purple"},
+      "size": {"value": 3}
+    }
+  },{
+    "mark": "rule",
+    "encoding": {
+      "x": {"datum":88},
+      "color": {"value": "orange"},
+      "size": {"value": 3}
+    }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 400,
+          "y":5,
+          "lineBreak":"\n",
+          "fill":"purple",
+          "text": "Fluent Median"
+        }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 270,
+          "y":5,
+          "lineBreak":"\n",
+          "fill":"orange",
+          "text": "Not Fluent Median"
+        }}, 
+ {"mark": {
+          "type": "text",
+          "align": "center",
+          "x": 120,
+          "y":100,
+          "lineBreak":"\n",
+          "fill":"#808080",
+          "font":"sans-serif",
+          "fontWeight":100,
+          "text": "We observe that the median \n for fluent English speakers of 91, \n is greater than the median for \n non-fluent English speakers of 88."
+        }}]
+}

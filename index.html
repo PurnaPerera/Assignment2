@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Bilingual Society</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Lobster&display=swap" rel="stylesheet">
+  
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+  
+</head>
+<body>
+  <div class="page">
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>A Bilingual Society</h1>
+        <p> The <span class='basque'>Basque</span> Country is an autonomous zone in nothern <span class='spanish'>Spain</span>. It is unique in that it harbours a bilingual population. People
+          speak the national language of <span class='spanish'>Spanish</span> as well as their regional language of <span class='basque'>Basque</span>. Unlike most regional languages in <span class='spanish'>Spain</span>, 
+          <span class='basque'>Basque</span> is completely unrelated to <span class='spanish'>Spanish</span>, predating its advent. We highlight the <span class='basque'>Basque</span> speaking areas of <span class='spanish'>Spain</span> below. </p>
+        <h2><span class='basque'>Basque</span> Speaking Areas of <span class='spanish'>Spain</span></h2>
+        <div id="europe_map" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p> 
+        </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2><br> <br> <br>The Study</h2>
+          <p>In 2017, a <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2017.00522/full">study</a> was conducted on linguistic 
+            ability in the <span class='basque'>Basque</span> Country. The study, while localised to this single region, can provide insights into the impact of
+            bilingualism on a society. Given that over 20% of Australians speak a second language, these findings could provide commentary
+            on the future evolution of Australian. <br> <br> The study featured people from several different <span class='basque'>Basque</span> speaking regions. 
+            The map to the right details where the test subject frequently came from.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-2-3">
+        <h2>Percentage of Test Subjects from Each Region</h2>
+        <div id="chloropleth_map" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+          <div id="scatter_plot" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-3">
+          <div class="description description-right">
+            <h2> <br>Linguistic Testing</h2>
+            <p> Several tests were conducted to capture linguistic ability. Of these tests, the most definitive was the LexTALE test
+              which involves the subject having to determine whether a given word exists in the language or not. Scores range from
+              0-100 with a score of 70 typically demonstrating <span class="fluent">fluency</span>. <br> <br> The plot to the left shows that the population is
+              consistently proficient at Spanish, while displaying more mixed results in Basque. Additionally, we see that native
+              bilinguals are typically more proficient at both languages than native monolinguals, implying a relationship between
+              age of acquisition and proficiency.
+            </p>
+          </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+  
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2> <br>Second Language Acquisition</h2>
+          <p> Given that the population is consistently proficient at Spanish, we can focus in on the proficiency of English and Basque.
+            By observing the distribution of Basque scores amongst the populations of <span class="fluent">fluent</span> and <span class="not_fluent">non-fluent</span> English seperately, we see
+            that fluent English speakers are typically more proficient at Basque as well. This suggests that perhaps being raised
+            bilingual increases one's aptitude for acquiring other languages.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="histogram" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+   <!-- pure grid group -->
+   <div class="pure-g">
+    <div class="pure-u-2-3">
+      <div id="cumulative" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-3">
+      <div class="description description-right">
+        <h2> <br>Age of Acquisition</h2>
+        <p> We can further explore the link between a subject's proficiency in a language and the age at which they acquired it. We do
+          this by observing what percentage of subjects have acquired each of <span class='spanish'>Spanish</span>, <span class='english'>English</span> and <span class='basque'>Basque</span> by each age. <br> <br> We see that
+          filtering for higher perfomers leads to steeper curves in <span class='spanish'>Spanish</span> and <span class='basque'>Basque</span>. This suggests that acquiring a language younger 
+          increases one's likely proficiency. <span class='english'>English</span> however, is an exception to this pattern, showing instead the opposite trend.
+        </p>
+      </div>
+    </div>
+   </div>
+   <!-- end pure grid group -->
+
+   <!-- pure grid group -->
+   <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h2>Language and Education</h2>
+      <p> While we have explored the distribution of linguistic ability, we are yet to explore the impacts of linguistic ability on an
+        individual's life. We can do this by exploring the link between educational level and linguistic proficiency. The below charts
+        demonstrate that across both <span class='basque'>Basque</span> and <span class='english'>English</span>, higher linguistic ability seems to correlate with higher education level. This
+        suggests that being proficient in a second language may better equip you with the learning agility for higher education.
+      </p>
+    </div>
+  </div>
+  <!-- end pure grid group -->
+  
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="basque_bar" class="vis-container"></div>
+      </div>
+        <div class="pure-u-1-2">
+          <div id="english_bar" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+   <div class="pure-g">
+    <div class="pure-u-1-1">
+      <div class="small-font"> Author: Purna Perera <br> Data Source: https://www.frontiersin.org/articles/10.3389/fpsyg.2017.00522/full  <br>
+        This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+      </div class="small-font">
+    </div>
+  </div>
+  <!-- end pure grid group -->
+  </div>
+ 
+
+<script type="text/javascript">
+  var spec2 = "scatter_plot.vg.json";
+  var spec3 = "map.vg.json";
+  var spec4 = "histogram.vg.json";
+  var spec5 = "basque_bar_chart.vg.json";
+  var spec6 = "english_bar_chart.vg.json";
+  var spec7 = "europe.vg.json";
+  var spec8 = "cumulative_curve.vg.json"
+  
+  vegaEmbed('#scatter_plot', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#chloropleth_map', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#histogram', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#basque_bar', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#english_bar', spec6).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#europe_map', spec7).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#cumulative', spec8).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+</body>
+</html>
+
